@@ -96,7 +96,7 @@ canopy.post = function (sampchain, projectname, K, numchain, burnin, thin,
         output.tree=samptreethin[[treei]]
         output.tree.Z=output.tree$Z[,2:ncol(output.tree$Z)]
         output.tree.P=apply(output.tree$P[2:nrow(output.tree$P),,drop = FALSE],2,function(x){x/sum(x)})
-        output.tree$CCF= output.tree.Z %*% output.tree.P 
+        # output.tree$CCF= output.tree.Z %*% output.tree.P 
         samptreethin[[treei]]=output.tree
     }
     return(list(samptreethin, samptreethin.lik, config, config.summary))
